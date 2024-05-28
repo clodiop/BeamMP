@@ -1078,7 +1078,7 @@ local function restorePlayerVehicle(playerName)
     local player =  getPlayerByName(playerName)
     if player == nil then
         log("E", "restorePlayerVehicle", "Couldnt find player??")
-
+	return 
     end
 
     -- its a table of ids
@@ -1087,6 +1087,7 @@ local function restorePlayerVehicle(playerName)
     for x,y in pairs(vehicles_ServerIDs)do
         spawnDeletedVehicles(y)
         log("D", "restorePlayerVehicle", "Trying to respawn : ".. tostring(x) .. tostring(y))
+		
     end
 end
 
